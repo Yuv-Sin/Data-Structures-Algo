@@ -1,6 +1,6 @@
 package sorting;
 
-public class SelectionSort {
+public class  SelectionSort {
 
     public static int[] sort(int arr[]){
         for(int counter=0; counter<arr.length-1; counter++){
@@ -18,7 +18,7 @@ public class SelectionSort {
     }
 
     public static void main(String ar[]){
-        int arr[] = {88,68,101,45,20,99,120};
+        int arr[] = {88,68,101,45,20,99,121};
         int[] sortedArray = sort(arr);
         for(int val:sortedArray){
             System.out.print(val +" ");
