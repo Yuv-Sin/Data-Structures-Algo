@@ -3,9 +3,7 @@ package matrix;
 public class SpiralPrint {
 
     public static void printSpiral(int[][] matrix){
-        for(int j=0; j<matrix[0].length; j++){
-            System.out.print(matrix[0][j]+ " ");
-        }
+        // Logic coming soon!
     }
 
     public static void main(String ar[]){
