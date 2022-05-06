@@ -1,6 +1,6 @@
 package recursion;
 
-public class IsSortedArray {
+public class IsArraySorted {
     // Checks if the given array is sorted or not
     private static boolean isArraySorted(int[] arr, int index) {
         if(index==arr.length-1)
