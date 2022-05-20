@@ -1,6 +1,5 @@
 package recursion;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SubSequence {
@@ -26,8 +25,30 @@ public class SubSequence {
         return myResult;
     }
 
+    // get SubString with ASCII Code
+    private static ArrayList<String> getSSWASCII(String value){
+        ArrayList<String> myResult = new ArrayList<>();
+        if(value.length()==0){
+            ArrayList<String> baseCase = new ArrayList<>();
+            baseCase.add("");
+            return baseCase;
+        }
+        char cc = value.charAt(0);
+        String ccAscii = String.valueOf((int)cc);
+        String ros = value.substring(1);
+        ArrayList<String> recResult = getSSWASCII(ros);
+        for(int i=0; i<recResult.size(); i++){
+            myResult.add(recResult.get(i));
+            myResult.add(cc+recResult.get(i));
+            myResult.add(ccAscii+recResult.get(i));
+        }
+        return myResult;
+    }
+
     public static void main(String ar[]){
         // Expected Output = ['', 'a', 'b', 'ab', 'c', 'ac', 'bc', 'abc'] = abc
         System.out.print(getSubSequence("abc"));
+        System.out.println();
+        System.out.print(getSSWASCII("ab"));
     }
 }
