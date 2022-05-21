@@ -3,6 +3,7 @@ package recursion;
 import java.util.ArrayList;
 
 public class MazePath {
+    //Traverses 3X3 GRID
     private static ArrayList<String> getMazePath(int cr, int cc, int er, int ec){
 
         //Base case when both pointers reach the end
@@ -27,9 +28,15 @@ public class MazePath {
         }
 
         //Traversing Vertically
-        ArrayList<String> rrv = getMazePath(cr+1, cc, er,ec);
+        ArrayList<String> rrv = getMazePath(cr+1, cc, er,ec); //cr+1 : because if we take one step vertically row changes
         for(String rrvs:rrv){
             mr.add("V"+rrvs);
+        }
+
+        //Traversing Diagonally
+        ArrayList<String> rrd = getMazePath(cr+1,cc+1, er, ec);//cr+1, cc+1 : because if we take one step diagonally row & column changes
+        for(String rrds:rrd){
+            mr.add("D"+rrds);
         }
 
         return mr;
