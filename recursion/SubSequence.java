@@ -45,10 +45,24 @@ public class SubSequence {
         return myResult;
     }
 
+    //Best Approach without using ArrayList
+    private static void printSubsequences(String value, String result){
+        //Base case
+        if(value.length()==0){
+            System.out.print(result+", ");
+            return;
+        }
+        char cc = value.charAt(0);
+        String ros = value.substring(1);
+        printSubsequences(ros,result);
+        printSubsequences(ros, result+cc);
+    }
+
     public static void main(String ar[]){
-        // Expected Output = ['', 'a', 'b', 'ab', 'c', 'ac', 'bc', 'abc'] = abc
-        System.out.print(getSubSequence("abc"));
-        System.out.println();
-        System.out.print(getSSWASCII("ab"));
+//      Expected Output = ['', 'a', 'b', 'ab', 'c', 'ac', 'bc', 'abc'] = abc
+//        System.out.print(getSubSequence("abc"));
+//        System.out.println();
+//        System.out.print(getSSWASCII("ab"));
+        printSubsequences("abc","");
     }
 }

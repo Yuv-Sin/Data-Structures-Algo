@@ -21,7 +21,23 @@ public class Permutation {
         }
        return myResult;
     }
+
+    //Better Approach without using arraylist
+    private static void printPermutations(String value, String result){
+        if(value.length()==0){
+            System.out.print(result+" ");
+            return;
+        }
+        for(int i=0; i<value.length(); i++) {
+            char cc = value.charAt(i);
+            String ros = value.substring(0, i) + value.substring(i+1);
+            printPermutations(ros, result+cc);
+        }
+    }
+
+
     public static void main(String ar[]){
-        System.out.print(getPermutations("abcd"));
+        //System.out.print(getPermutations("abcd"));
+        printPermutations("abc","");
     }
 }
