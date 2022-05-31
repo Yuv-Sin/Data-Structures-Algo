@@ -1,4 +1,4 @@
-package challanges;
+package challenges;
 
 // Power Function in Log(n)
 // fails for larger power values

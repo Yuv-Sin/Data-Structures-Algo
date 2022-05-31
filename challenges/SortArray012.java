@@ -1,4 +1,4 @@
-package challanges;
+package challenges;
 
 //Sort the array of [0,1,2]
 public class SortArray012 {
